@@ -1,0 +1,31 @@
+void learn(String temp)
+	{
+		if(temp=='mkdir')
+		{
+			System.out.println("Description: Creates a directory\n");
+			System.out.println("Syntax: mkdir 'directory name'\n");
+			System.out.println("Example: mkdir myfiles\nthis creates a directory called myfiles\n");
+		}
+		else if(temp=='ls')
+		{
+			System.out.println("Description: Displays contents of the directory\n");
+			System.out.println("Syntax: ls 'directory name'\n");
+			System.out.println("Example: ls myfiles\nThis displays all the files/directories in myfile directory\n");
+		}
+		else if(temp=='rm')
+		{
+			System.out.println("Description: rm removes files\n");
+			System.out.println("Syntax: rm 'file name'\n");
+			System.out.println("Example: rm fileA\nremoves or deletes fileA \n");
+		}
+		else if(temp=='cal')
+		{
+			System.out.println("Description: displays the calendar of the current month\n");
+			System.out.println("Syntax: cal\n");
+		}
+		
+		
+		
+		
+		
+	}
