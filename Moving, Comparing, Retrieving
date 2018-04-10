@@ -1,0 +1,65 @@
+//Moving
+
+public void demoMove(final String sourceFileName, final String targetFileName)
+   {
+      checkNotNull(sourceFileName, "Move source file name must NOT be null.");
+      checkNotNull(targetFileName, "Move destination name must NOT be null.");
+      final File sourceFile = new File(sourceFileName);
+      final File targetFile = new File(targetFileName);
+      try
+      {
+         Files.move(sourceFile, targetFile);
+      }
+      catch (IOException fileIoEx)
+      {
+         err.println(
+              "ERROR trying to move file '" + sourceFileName
+            + "' to '" + targetFileName + "' - " + fileIoEx.toString());
+      }
+   }
+   
+   
+   //Comparing
+   
+   public void demoEqual(final String fileName1, final String fileName2)
+   {
+      checkNotNull(fileName1, "First file name for comparison must NOT be null.");
+      checkNotNull(fileName2, "Second file name for comparison must NOT be null.");
+      final File file1 = new File(fileName1);
+      final File file2 = new File(fileName2);
+      try
+      {
+         out.println(
+             "File '" + fileName1 + "' "
+           + (Files.equal(file1, file2) ? "IS" : "is NOT")
+           + " the same as file '" + fileName2 + "'.");
+      }
+      catch (IOException fileIoEx)
+      {
+         err.println(
+              "ERROR trying to compare two files '"
+            + fileName1 + "' and '" + fileName2 + "' - " + fileIoEx.toString());
+      }
+   }
+   
+   
+   //Retrieving
+   
+   public void demoRetrievingLinesFromFile(final String fileName)
+   {
+      final File file = new File(fileName);
+      try
+      {
+         final List<String> lines = Files.readLines(file, Charset.defaultCharset());
+         for (final String line : lines)
+         {
+            out.println(">> " + line);
+         }
+      }
+      catch (IOException ioEx)
+      {
+         err.println(
+              "ERROR trying to retrieve lines from file '"
+            + fileName + "' - " + ioEx.toString());
+      }
+   }
