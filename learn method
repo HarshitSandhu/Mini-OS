@@ -23,7 +23,7 @@ void learn(String temp)
 			System.out.println("Description: displays the calendar of the current month\n");
 			System.out.println("Syntax: cal\n");
 		}
-		
+		//more commands to be added
 		
 		
 		
