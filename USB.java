@@ -1,29 +1,33 @@
 package Implementation;
-
+import java.util.ArrayList;
 public class USB {
-	private final double maxSpace;
-	private double spaceAvailable;
-	/// ArrayList of different contents
-	USB(double maxSpace,double spaceAvailable)
+	
+	public ArrayList<FILE> contents;
+	USB()
 	{
-		this.maxSpace=maxSpace;
-		this.spaceAvailable=spaceAvailable;
+		contents= new ArrayList<FILE>();
+		contents.add(new FILE("IMAGES",32,0.043));
+		contents.add(new FILE("MOVIES",47.67,0.043));
+		contents.add(new FILE("Tangibles",3,0.043));
+		contents.add(new FILE("os_e03.docs",0.967,0.043));
+		contents.add(new FILE("delfil",24,0.043));
+		contents.add(new FILE("img1.jpeg",0.67,0.043));
+		contents.add(new FILE("fun.ppt",2.34,0.043));
+		contents.add(new FILE("lmao",11.67,0.043));
 	}
 	
-	void clearUSB()
+	public void display()
 	{
-		spaceAvailable=maxSpace;
-		/// remove all files from usb
+		System.out.println("S.no\t\tFileName\t\tSize");
+		for(int i=0;i<contents.size();i++)
+		{
+			System.out.print(i+1+"\t\t"+contents.get(i).getfile_name()+"\t\t"+contents.get(i).getFile_size());
+			System.out.println();
+		}
 	}
 	
-	void add(/* file*,*/double program_size)
-	{
-		/// add file to array list
-		spaceAvailable=spaceAvailable-program_size;
-	}
 	
-	void remove(/*file*/double program_size )
-	{
-		spaceAvailable=spaceAvailable-program_size;
-	}
+	
+	
+	
 }
